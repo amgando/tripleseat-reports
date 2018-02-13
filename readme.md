@@ -17,6 +17,12 @@ API Endpoints
 - [ ] Leads API
 - [ ] Nested Objects API Information
 
+### setup
+
+1. get your own API keys from Tripleseat here: `http://galvanize.tripleseat.com/settings/api`
+2. expose them as environment variables: `TRIPLESEAT_PUBLIC_TOKEN` and `TRIPLESEAT_SECRET_KEY`
+3. see the example below
+
 ### example usage
 
 ```ruby
