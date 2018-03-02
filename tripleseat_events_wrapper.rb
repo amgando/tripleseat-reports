@@ -6,12 +6,15 @@ module TripleSeat
 
   class Event
     FIELDS = {
+      id: "id",
       location: "location_id",
       date: "event_date",
       name: "name",
       registration_url: "custom:Registration Url",
       galvanize_url: "custom:Galvanize Url"
     }
+
+    TRIPLESEAT_URL = "http://galvanize.tripleseat.com/events"
 
     def initialize(event)
       FIELDS.each do |k,v|
@@ -25,6 +28,11 @@ module TripleSeat
         instance_variable_set("@#{k}", value)
       end
     end
+
+    def tripleseat_url
+      "#{TRIPLESEAT_URL}/#{@id}"
+    end
+    alias url tripleseat_url
 
     def self.from_json(event)
       Event.new(event)
